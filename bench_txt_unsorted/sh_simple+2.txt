@@ -1,0 +1,34 @@
+#ADDR_DATA setup
+ori $10, $10, 32768
+ori $11, $11, 16384
+
+multu $11, $10
+mfhi  $4
+mflo  $4
+
+add   $10, $0, $0
+add   $11, $0, $0
+
+
+
+addi $10, $0, 0xABCD
+sll $10, $10, 16
+addi $10, $10, 0xEF69
+
+sh $10, 18($4)
+lw $11, 16($4)
+
+sll $10, $10, 16
+srl $10, $10, 16
+
+beq $10, $11, 16
+addi $2, $0, 0
+jr $0
+nop
+nop
+addi $2, $0, 1
+jr $0
+nop
+
+
+#1

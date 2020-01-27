@@ -1,0 +1,4 @@
+jalr $0
+addi $2, $2, 10
+
+#Exit code: 10

@@ -1,0 +1,12 @@
+#tests adding 0x7FFF FFFF + 1 => 32 bit signed overflow
+
+ori	$t3, $t3, 0x7FFF
+sll	$t3, $t3, 16
+ori	$t3, $t3, 0xFFFF 	# $t3 = 7FFFFFFF
+
+ori	$t4, $t4, 1
+
+add  	$2, $t3, $t4
+
+jr $0
+#exit status: -10

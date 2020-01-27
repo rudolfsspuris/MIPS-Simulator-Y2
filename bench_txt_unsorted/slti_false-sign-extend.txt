@@ -1,0 +1,8 @@
+#tests slti 52 < -1  - if sign extension and signed comparison works properly, -1 is clearly smaller
+
+addi	$t1, $t1, 52
+
+slti 	$2, $t1, -1
+
+jr $0
+#exit status: 0

@@ -1,0 +1,5 @@
+# Tries to load data from ADDR NULL
+
+lw	$11, 0($0)
+
+# Exit code = -11 = 245

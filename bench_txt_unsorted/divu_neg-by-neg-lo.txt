@@ -1,0 +1,17 @@
+
+#tests division of negative numbers
+#4294967286
+addi  	$11, $11, -10
+
+#2147483643
+ori  	$10, $10, 0x7FFF
+sll   $10, $10, 16
+ori  	$10, $10, 0xFFFB
+
+
+divu   	$11, $10
+mflo	$2
+
+jr $0
+
+#Exit code: 2

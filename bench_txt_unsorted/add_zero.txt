@@ -1,0 +1,6 @@
+#tests add 0+0 = 0
+
+add  	$2, $t1, $t2
+
+jr $0
+#exit status: 0

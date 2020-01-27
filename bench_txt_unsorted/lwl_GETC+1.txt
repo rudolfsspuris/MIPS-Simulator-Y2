@@ -1,0 +1,31 @@
+#setup GETC address  = 0x3000 0000 into $3
+ori	$3, $3, 0x3000
+sll	$3, $3, 16
+
+#test
+ori $11, $0, 0x6666
+sll $11, $11, 16
+ori $11, $11, 0x6666
+
+ori $10, $0, 0x0000
+sll $10, $10, 16
+ori $10, $10, 0x5866
+
+lwl $11, 1($3)
+
+beq $10, $11, 16
+addi $2, $0, 0
+jr $0
+nop
+nop
+addi $2, $0, 1
+jr $0
+nop
+
+jr $0
+nop
+
+
+
+#Expected input = X   ===> Exit status = 1
+#Else  Exit status = 0

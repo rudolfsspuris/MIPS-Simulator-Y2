@@ -1,0 +1,1680 @@
+#!/bin/bash
+
+#Initialise output variables
+TestId=0
+Instruction=none
+Author=$USER
+
+
+initialise_case () {
+    #reset variables
+    Status=none
+    sim_out=none
+    sim_exitcode=none
+    expected_out=other
+    expected_exitcode=other
+    let "TestId += 1"
+    filename=$(basename "$i") # isolate file name (without path)
+    case_name="${filename%.*}" # remove .bin extension to extract the case name
+    Instruction="${case_name%_*}" # Remove _suffix to extract the primary tested instruction
+}
+
+
+test_pass () { # Compare simulator output with expected output
+    if [ "$sim_putchar" == "$expected_out" ] && [ "$sim_exitcode" == "$expected_exitcode" ]
+    then
+        Status=Pass
+    else
+        Status=Fail
+    fi
+}
+
+echo TestId , Instruction , Status , Author , Message #top row of output: column headers
+
+for i in bench_bins/*; do #iterate through binaries
+
+    initialise_case
+
+    if [[ $i =~ .*GETC*. ]]; then
+        cat ./getcinput.txt |  $1 $i # run the simulator with text file as console input
+        sim_exitcode=$?
+    else
+        # Save output of program (what would be printed to the screen) to variable:
+        sim_out=$( $1 $i ) # run simulator on current binary and capture output
+        sim_exitcode=$?
+        sim_putchar=$( printf '%d\n' "'$sim_out" )
+    fi
+
+
+
+    case $case_name in
+        # ADD INSTRUCTIONS
+        'add')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 225"
+            test_pass
+            ;;
+
+        'addi')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 54"
+            test_pass
+            ;;
+        'addi_overflow')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 254"
+            test_pass
+            ;;
+        'addi_signed-overflow')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 246"
+            test_pass
+            ;;
+        'addi_sign-extend')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+
+        'addiu')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 54"
+            test_pass
+            ;;
+        'addiu_overflow')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 254"
+            test_pass
+            ;;
+        'addiu_signed-overflow')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 128"
+            test_pass
+            ;;
+        'addiu_sign-extend')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+
+        'add_overflow')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 254"
+            test_pass
+            ;;
+        'add_signed-overflow')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 246"
+            test_pass
+            ;;
+        'addu')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 254"
+            test_pass
+            ;;
+        'addu_zero')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'add_zero')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+
+
+        # AND INSTRUCTIONS
+        'andi_simple-test1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 15"
+            test_pass
+            ;;
+        'andi_simple-test2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'andi_zero-extension')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'and_simple-test1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 15"
+            test_pass
+            ;;
+        'and_simple-test2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+
+
+
+        # BRANCH INSTRUCTIONS
+        'beq_double-branch')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 7"
+            test_pass
+            ;;
+        'beq_false-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'beq_negative-offset')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 5"
+            test_pass
+            ;;
+        'beq_true-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+
+        'bgez_0-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'bgezal_0-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'bgezal_double-branch')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 7"
+            test_pass
+            ;;
+        'bgezal_false-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'bgezal_link-LSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 12"
+            test_pass
+            ;;
+        'bgezal_link-MSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 16"
+            test_pass
+            ;;
+        'bgezal_negative-offset')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 5"
+            test_pass
+            ;;
+        'bgezal_pos-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'bgez_double-branch')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 7"
+            test_pass
+            ;;
+        'bgez_false-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'bgez_negative-offset')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 5"
+            test_pass
+            ;;
+        'bgez_pos-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'bgtz_0-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'bgtz_double-branch')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 7"
+            test_pass
+            ;;
+        'bgtz_false-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'bgtz_negative-offset')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 5"
+            test_pass
+            ;;
+        'bgtz_pos-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'blez_0-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'blez_double-branch')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 9"
+            test_pass
+            ;;
+        'blez_negative-offset')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 7"
+            test_pass
+            ;;
+        'blez_neg-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'blez_pos-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+        'bltz_0-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'bltzal_0-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'bltzal_double-branch')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 7"
+            test_pass
+            ;;
+        'bltzal_link-LSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 12"
+            test_pass
+            ;;
+        'bltzal_link-MSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 16"
+            test_pass
+            ;;
+        'bltzal_negative-offset')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 5"
+            test_pass
+            ;;
+        'bltzal_neg-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'bltzal_pos-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'bltz_double-branch')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 5"
+            test_pass
+            ;;
+        'bltz_negative-offset')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 5"
+            test_pass
+            ;;
+        'bltz_neg-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'bltz_pos-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'bne_double-branch')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 7"
+            test_pass
+            ;;
+        'bne_false-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'bne_negative-offset')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 5"
+            test_pass
+            ;;
+        'bne_true-positive')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+
+
+
+        # DIV INSTRUCTIONS
+        'div_by-zero-hi')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 154"
+            test_pass
+            ;;
+        'div_by-zero-lo')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 154"
+            test_pass
+            ;;
+        'div_neg-by-neg-hi')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 207"
+            test_pass
+            ;;
+        'div_neg-by-neg-lo')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 84"
+            test_pass
+            ;;
+        'div_neg-by-pos-hi')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 207"
+            test_pass
+            ;;
+        'div_neg-by-pos-lo')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 172"
+            test_pass
+            ;;
+        'div_pos-by-neg-hi')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 49"
+            test_pass
+            ;;
+        'div_pos-by-neg-lo')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 172"
+            test_pass
+            ;;
+        'div_pos-by-pos-hi')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 65"
+            test_pass
+            ;;
+        'div_pos-by-pos-lo')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 66"
+            test_pass
+            ;;
+        'divu_by-zero-hi')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 154"
+            test_pass
+            ;;
+        'divu_by-zero-lo')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 154"
+            test_pass
+            ;;
+        'divu_neg-by-neg-hi')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'divu_neg-by-neg-lo')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 2"
+            test_pass
+            ;;
+
+
+
+
+
+        # JUMP INSTRUCTIONS
+        'jal_link-LSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'jal_link-MSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 16"
+            test_pass
+            ;;
+        'jal_pos')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 6"
+            test_pass
+            ;;
+        'jalr_link-LSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 20"
+            test_pass
+            ;;
+        'jalr_link-MSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 16"
+            test_pass
+            ;;
+        'jalr_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'jalr_pos')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 7"
+            test_pass
+            ;;
+        'jalr_to-0-test-delay')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 10"
+            test_pass
+            ;;
+        'j_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'j_pos')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 6"
+            test_pass
+            ;;
+        'jr_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'jr_pos')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 7"
+            test_pass
+            ;;
+        'jr_to-0-test-delay')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 10"
+            test_pass
+            ;;
+
+
+        # LOAD BYTE INSTRUCTIONS
+        'lb_ADDR-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lb_ADDR-2352')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lb_ADDR')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+
+
+
+        'lb_GETC-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lb_GETC')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lb_GETC+1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lb_GETC+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lb_GETC+3')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lb_GETC+4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+
+
+
+        'lb_instr-mem')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 40"
+            test_pass
+            ;;
+        'lb_OOB-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lb_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lb_simple+1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lb_simple+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lb_simple+3')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lb_simple-neg')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lb_simple-pos')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+
+        'lbu_ADDR-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lbu_ADDR-2352')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lbu_ADDR')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+
+        'lbu_GETC-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lbu_GETC')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lbu_GETC+1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lbu_GETC+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lbu_GETC+3')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lbu_GETC+4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+
+        'lbu_instr-mem')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 40"
+            test_pass
+            ;;
+        'lbu_OOB-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lbu_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lbu_simple+1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lbu_simple+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lbu_simple+3')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lbu_simple-neg')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lbu_simple-pos')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+
+
+
+        # LOAD HALF INSTRUCTIONS
+        'lh_ADDR-2352')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lh_ADDR-2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lh_ADDR')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+
+        'lh_GETC-2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lh_GETC')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lh_GETC+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lh_GETC+4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+
+        'lh_instr-mem')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lh_OOB-2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lh_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lh_simple+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lh_simple-neg')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lh_simple-pos')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+
+        'lhu_ADDR-2352')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lhu_ADDR-2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lhu_ADDR')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+
+        'lhu_GETC-2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lhu_GETC')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lhu_GETC+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lhu_GETC+4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+
+        'lhu_instr-mem')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+        'lh_unaligned')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+        'lhu_OOB-2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lhu_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lhu_simple+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lhu_simple-neg')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lhu_simple-pos')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lhu_unaligned')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+
+
+        # LOAD WORD INSTRUCTIONS
+        'lw_ADDR-2352')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lw_ADDR-4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lw_ADDR')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+
+        'lw_GETC-4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lw_GETC')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lw_GETC+4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+
+        'lw_instr-mem')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+
+
+        'lwl_ADDR-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lwl_ADDR')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+
+        'lwl_GETC-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lwl_GETC')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwl_GETC+1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwl_GETC+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwl_GETC+3')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwl_GETC+4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+
+        'lwl_instr-mem')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+        'lwl-lwr_simple')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwl_OOB-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwl_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lwl_simple+0')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwl_simple+1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwl_simple+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwl_simple+3')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+        'lw_NULL')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lw_OOB-4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lw_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+
+        'lwr_ADDR-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lwr_ADDR')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+        'lwr_GETC-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lwr_GETC')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwr_GETC+1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwr_GETC+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwr_GETC+3')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwr_GETC+4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+
+        'lwr_instr-mem')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+
+        'lwr_OOB-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwr_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'lwr_simple+0')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwr_simple+1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwr_simple+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lwr_simple+3')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+        'lw_simple')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'lw_unaligned')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+
+
+
+
+        # HI / LO OPERATIONS
+        'mfhi')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 5"
+            test_pass
+            ;;
+        'mflo')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 5"
+            test_pass
+            ;;
+
+        # MISC OPERATIONS
+        'misc_nojump0')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'misc_writereg0')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+
+
+        # MULT INSTRUCTIONS
+        'mult_by-zero')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'mult_minus-large')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 64"
+            test_pass
+            ;;
+        'mult_minus-ones')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'mult_neg-result')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'mult_pos-large')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'mult_pos-result')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+
+        'multu_by-zero')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'multu_large')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 64"
+            test_pass
+            ;;
+        'multu_neg-by-pos')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'multu_ones')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'multu_pos-large')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'multu_pos-result')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+
+
+
+
+        # OR INSTRUCTIONS
+        'ori_simple-test1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 255"
+            test_pass
+            ;;
+        'ori_simple-test2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 15"
+            test_pass
+            ;;
+        'ori_zero-extension')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 240"
+            test_pass
+            ;;
+        'or_simple-test1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 255"
+            test_pass
+            ;;
+        'or_simple-test2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 15"
+            test_pass
+            ;;
+
+
+
+
+
+
+        # STORE BYTE INSTRUCTIONS
+        'sb_ADDR-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sb_ADDR-2352')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sb_ADDR')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'sb_instr-mem')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sb_OOB-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'sb_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+        'sb_PUTC-1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sb_PUTC+1')
+            let "expected_out=75"
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'sb_PUTC+2')
+            let "expected_out=75"
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'sb_PUTC+3')
+            let "expected_out=88"
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'sb_PUTC+4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sb_PUTC')
+            let "expected_out=75"
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+
+        'sb_simple+1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'sb_simple+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'sb_simple+3')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'sb_simple')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+
+
+
+        # STORE HALF INSTRUCTIONS
+        'sh_ADDR-2352')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sh_ADDR-2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sh_ADDR')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'sh_instr-mem')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sh_OOB-2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'sh_OOB+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sh_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sh_PUTC-2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sh_PUTC+2')
+            let "expected_out = 88"
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'sh_PUTC+4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sh_PUTC')
+            let "expected_out = 75"
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'sh_simple+2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'sh_simple')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+                ;;
+        'sh_unaligned')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+
+
+
+
+        # SHIFT LEFT INSTRUCTIONS
+        'sll_negative-test')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 248"
+            test_pass
+            ;;
+        'sll_simple-test')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'sllv_negative-test')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 248"
+            test_pass
+            ;;
+        'sllv_simple-test')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'sllv_truncation-test')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+        ;;
+
+
+
+        # SLT INSTRUCTIONS
+        'slt')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'slt_false')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'slti')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'slti_false')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'slti_false-sign-extend')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'slt_neg-pos')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'slt_neg-pos-false')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'sltu_neg-pos')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'sltu_neg-pos-false')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+
+
+
+        # SHIFT RIGHT INSTRUCTIONS
+        'sra_negative-LSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 248"
+            test_pass
+            ;;
+        'sra_negative-MSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 255"
+            test_pass
+        ;;
+        'sra_positive-LSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'sra_positive-MSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+        ;;
+        'srav_negative-LSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 248"
+            test_pass
+            ;;
+        'srav_negative-MSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 255"
+            test_pass
+        ;;
+        'srav_positive-LSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+            ;;
+        'srav_positive-MSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+        ;;
+        'srav_truncation-test')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+        ;;
+        'srl_negative-test-LSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 248"
+            test_pass
+            ;;
+        'srl_negative-test-MSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 127"
+            test_pass
+        ;;
+        'srl_simple-test-LSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+        ;;
+        'srl_simple-test-MSB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'srlv_simple-test')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+        ;;
+        'srlv_truncation-test')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 8"
+            test_pass
+        ;;
+
+
+
+
+        # SUB INSTRUCTIONS
+        'sub')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 121"
+            test_pass
+            ;;
+        'sub_overflow')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+        'sub_signed-overflow')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 246"
+            test_pass
+            ;;
+        'subu')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 121"
+            test_pass
+            ;;
+        'subu_signed-overflow')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 255"
+            test_pass
+            ;;
+        'sub_zero')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 0"
+            test_pass
+            ;;
+
+
+        # STORE WORD INSTRUCTIONS
+        'sw_ADDR-2352')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sw_ADDR-4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sw_ADDR')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'sw_instr-mem')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sw_OOB-4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+            ;;
+        'sw_OOB')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sw_PUTC-4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sw_PUTC+4')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+        'sw_PUTC')
+            let "expected_out = 88"
+            expected_exitcode=$sim_exitcode
+            test_pass
+            ;;
+        'sw_simple')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 1"
+            test_pass
+                ;;
+        'sw_unaligned')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 245"
+            test_pass
+            ;;
+
+
+
+
+
+        # XOR INSTRUCTIONS
+        'xor')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 102"
+            test_pass
+            ;;
+        'xori_zero-extension')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 240"
+            test_pass
+            ;;
+        'xori_simple-test1')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 240"
+            test_pass
+            ;;
+        'xori_simple-test2')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 15"
+            test_pass
+            ;;
+        'xor_zero')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 00"
+            test_pass
+            ;;
+
+        'misc_invalid-bin')
+            expected_out=$sim_putchar
+            let "expected_exitcode = 244"
+            test_pass
+            ;;
+
+    esac
+
+    echo $TestId"-"$case_name , $Instruction , $Status , $Author ,  "Simulator output: " $sim_out "   Simulator exit code: " $sim_exitcode   # output row for current test binary
+
+
+done
+
+echo

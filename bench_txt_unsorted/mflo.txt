@@ -1,0 +1,10 @@
+# tests moving 5 from register to LO and MFLO back to a different register
+ori	$3, $3, 5
+
+mtlo	$3
+
+mflo	$2
+
+jr	$0
+
+#Exit code: 5

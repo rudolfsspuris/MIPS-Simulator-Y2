@@ -1,0 +1,16 @@
+addi $11, $11, 0x2
+
+nop
+addi $12, $12, 1
+addi $12, $12, 1
+addi $12, $12, 1
+
+addi $11, $11, -1
+
+bgtz $11,  -16
+
+addi $2, $12, 0
+
+jr $0
+
+#Exit code:5

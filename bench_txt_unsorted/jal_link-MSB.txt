@@ -1,0 +1,13 @@
+jal 16
+addi $2, $2, 1
+addi $2, $2, 1
+addi $2, $2, 1
+addi $2, $2, 1
+addi $2, $2, 1
+addi $2, $2, 1
+addi $2, $2, 1
+addi $2, $31, 0
+srl  $2, $2, 24
+jr $0
+
+#Exit code: 0x10 = 16

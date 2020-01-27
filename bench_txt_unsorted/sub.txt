@@ -1,0 +1,10 @@
+#tests sub 173-52 = 121
+
+addi	$t1, $t1, 173
+addi	$t2, $t2, 52
+
+sub  	$2, $t1, $t2
+
+jr $0
+
+#exit status: 121

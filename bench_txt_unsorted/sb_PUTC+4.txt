@@ -1,0 +1,23 @@
+#setup PUTC address  = 0x3000 0004 into $3
+ori	$3, $3, 0x3000
+sll	$3, $3, 16
+addi	$3, $3, 4
+
+#test
+addi $10, $0, 0xABCD
+sll $10, $10, 16
+addi $10, $10, 0xEF69
+
+sb $10, +4($3)
+lb $11, +4($3)
+
+beq $10, $11, 16
+addi $2, $0, 0
+jr $0
+nop
+nop
+addi $2, $0, 1
+jr $0
+nop
+
+#245 = -11

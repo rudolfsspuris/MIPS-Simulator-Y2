@@ -1,0 +1,12 @@
+addi $10, $10, -22
+
+bltzal $10, 16
+addi $2, $0, 1
+jr $0
+nop
+addi $2, $0, 2
+addi $2, $2, 3
+addi $2, $2, 4
+jr $0
+
+#Exit code:8

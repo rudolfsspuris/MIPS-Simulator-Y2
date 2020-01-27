@@ -1,0 +1,8 @@
+addi $10, $10, 0x0FAB
+addi $11, $11, 0x00CD
+
+xor $2, $10, $11
+
+jr $0
+
+#Exit code: 102

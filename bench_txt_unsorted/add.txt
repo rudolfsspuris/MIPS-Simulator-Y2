@@ -1,0 +1,9 @@
+#tests add 173+52 = 225
+
+addi	$t1, $t1, 173
+addi	$t2, $t2, 52
+
+add  	$2, $t1, $t2
+
+jr $0
+#exit status: 225

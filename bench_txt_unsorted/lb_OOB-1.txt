@@ -1,0 +1,33 @@
+#ADDR_DATA_OOB setup
+ori $10, $10, 32768
+ori $11, $11, 18432
+
+multu $11, $10
+mfhi  $4
+mflo  $4
+
+add   $10, $0, $0
+add   $11, $0, $0
+
+
+#test
+addi $10, $0, 0xABCD
+sll $10, $10, 16
+ori $10, $10, 0xEFE5
+
+sw $10, -4($4)
+lb $11, -1($4)
+
+addi $10, $0, 0xFFE5
+
+beq $10, $11, 16
+addi $2, $0, 0
+jr $0
+nop
+nop
+addi $2, $0, 1
+jr $0
+nop
+
+
+#1

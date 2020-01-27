@@ -1,0 +1,15 @@
+#tests sub 0x8000 0000 - 1 => 2s complement signed overflow:
+# A = 0x1000... < 0
+# B = 1 > 0
+# A-B should be negative, but result is positive => arithmetic exception
+
+ori	$t3, $t3, 0x8000
+sll	$t3, $t3, 16 		# $t3 = 80000000
+
+ori	$t4, $t4, 1
+
+sub 	$2, $t3, $t4
+
+jr $0
+
+#exit status: -10

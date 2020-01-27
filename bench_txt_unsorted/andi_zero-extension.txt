@@ -1,0 +1,9 @@
+addi $10, $10, 0xFFFF
+sll  $10, $10, 16
+addi $10, $10, 0xFFFF
+
+andi $2, $10, 0xFFFF
+srl   $2, $2, 16
+
+jr $0
+#00

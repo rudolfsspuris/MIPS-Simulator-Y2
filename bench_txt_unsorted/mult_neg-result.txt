@@ -1,0 +1,41 @@
+addi    $10, $10, -2
+addi    $14, $14, 1000
+
+mult    $10, $14
+
+mfhi    $10
+mflo    $14
+
+#result should be 0xFF FF FF FF  FF FF F8 30
+
+addi 	$3, $3, 0xFFFF
+sll	$3, $3, 16
+ori	$3, $3, 0xFFFF
+sub	$10, $10, $3		#subtract expected amount FFFFFFFF from HI
+
+addi 	$4, $4, 0xFFFF
+sll	$4, $4, 16
+ori	$4, $4, 0xF830
+sub	$14, $14, $4		#subtract expected amount FFFFF830 from LO
+
+
+srl 	$11, $10, 8
+srl 	$12, $10, 16
+srl 	$13, $10, 24
+
+srl	$15, $14, 8
+srl 	$16, $14, 16
+srl 	$17, $14, 24
+
+#make sure each byte is 0
+or	$2, $10, $11
+or	$2, $2, $12
+or	$2, $2, $13
+or	$2, $2, $14
+or	$2, $2, $15
+or	$2, $2, $16
+or	$2, $2, $17
+
+jr	$0
+
+#Exit code: 0

@@ -1,0 +1,9 @@
+#tests sltu -30 < 5 <=> 30 < 5 => false
+
+addi	$t1, $t1, -30
+addi	$t2, $t2, 5
+
+sltu 	$2, $t1, $t2
+
+jr $0
+#exit status: 0

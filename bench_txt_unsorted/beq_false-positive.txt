@@ -1,0 +1,13 @@
+addi $10, $10, 0x0F00
+addi $11, $11, 0x0F0F
+
+beq $10, $11, 16
+addi $2, $0, 1
+nop
+jr $0
+nop
+addi $2, $0, 2
+addi $2, $2, 3
+addi $2, $2, 4
+jr $0
+#Exit code: 1

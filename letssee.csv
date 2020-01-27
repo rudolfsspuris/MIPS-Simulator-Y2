@@ -1,0 +1,298 @@
+TestId , Instruction , Status , Author , Message
+1-add , add , Pass , spruudis , Simulator output:     Simulator exit code:  225
+2-add_overflow , add , Pass , spruudis , Simulator output:     Simulator exit code:  254
+3-add_signed-overflow , add , Pass , spruudis , Simulator output:     Simulator exit code:  246
+4-add_zero , add , Pass , spruudis , Simulator output:     Simulator exit code:  0
+5-addi , addi , Pass , spruudis , Simulator output:     Simulator exit code:  54
+6-addi_overflow , addi , Pass , spruudis , Simulator output:     Simulator exit code:  254
+7-addi_sign-extend , addi , Pass , spruudis , Simulator output:     Simulator exit code:  0
+8-addi_signed-overflow , addi , Pass , spruudis , Simulator output:     Simulator exit code:  246
+9-addiu , addiu , Pass , spruudis , Simulator output:     Simulator exit code:  54
+10-addiu_overflow , addiu , Pass , spruudis , Simulator output:     Simulator exit code:  254
+11-addiu_sign-extend , addiu , Pass , spruudis , Simulator output:     Simulator exit code:  0
+12-addiu_signed-overflow , addiu , Pass , spruudis , Simulator output:     Simulator exit code:  128
+13-addu , addu , Pass , spruudis , Simulator output:     Simulator exit code:  254
+14-addu_zero , addu , Pass , spruudis , Simulator output:     Simulator exit code:  0
+15-and_simple-test1 , and , Pass , spruudis , Simulator output:     Simulator exit code:  15
+16-and_simple-test2 , and , Pass , spruudis , Simulator output:     Simulator exit code:  0
+17-andi_simple-test1 , andi , Pass , spruudis , Simulator output:     Simulator exit code:  15
+18-andi_simple-test2 , andi , Pass , spruudis , Simulator output:     Simulator exit code:  0
+19-andi_zero-extension , andi , Pass , spruudis , Simulator output:     Simulator exit code:  0
+20-beq_double-branch , beq , Pass , spruudis , Simulator output:     Simulator exit code:  7
+21-beq_false-positive , beq , Pass , spruudis , Simulator output:     Simulator exit code:  1
+22-beq_negative-offset , beq , Pass , spruudis , Simulator output:     Simulator exit code:  5
+23-beq_true-positive , beq , Pass , spruudis , Simulator output:     Simulator exit code:  8
+24-bgez_0-positive , bgez , Pass , spruudis , Simulator output:     Simulator exit code:  8
+25-bgez_double-branch , bgez , Pass , spruudis , Simulator output:     Simulator exit code:  7
+26-bgez_false-positive , bgez , Pass , spruudis , Simulator output:     Simulator exit code:  1
+27-bgez_negative-offset , bgez , Pass , spruudis , Simulator output:     Simulator exit code:  5
+28-bgez_pos-positive , bgez , Pass , spruudis , Simulator output:     Simulator exit code:  8
+29-bgezal_0-positive , bgezal , Pass , spruudis , Simulator output:     Simulator exit code:  8
+30-bgezal_double-branch , bgezal , Pass , spruudis , Simulator output:     Simulator exit code:  7
+31-bgezal_false-positive , bgezal , Pass , spruudis , Simulator output:     Simulator exit code:  1
+32-bgezal_link-LSB , bgezal , Pass , spruudis , Simulator output:     Simulator exit code:  12
+33-bgezal_link-MSB , bgezal , Pass , spruudis , Simulator output:     Simulator exit code:  16
+34-bgezal_negative-offset , bgezal , Pass , spruudis , Simulator output:     Simulator exit code:  5
+35-bgezal_pos-positive , bgezal , Pass , spruudis , Simulator output:     Simulator exit code:  8
+36-bgtz_0-positive , bgtz , Pass , spruudis , Simulator output:     Simulator exit code:  1
+37-bgtz_double-branch , bgtz , Pass , spruudis , Simulator output:     Simulator exit code:  7
+38-bgtz_false-positive , bgtz , Pass , spruudis , Simulator output:     Simulator exit code:  1
+39-bgtz_negative-offset , bgtz , Pass , spruudis , Simulator output:     Simulator exit code:  5
+40-bgtz_pos-positive , bgtz , Pass , spruudis , Simulator output:     Simulator exit code:  8
+41-blez_0-positive , blez , Pass , spruudis , Simulator output:     Simulator exit code:  8
+42-blez_double-branch , blez , Pass , spruudis , Simulator output:     Simulator exit code:  9
+43-blez_neg-positive , blez , Pass , spruudis , Simulator output:     Simulator exit code:  8
+44-blez_negative-offset , blez , Pass , spruudis , Simulator output:     Simulator exit code:  7
+45-blez_pos-positive , blez , Pass , spruudis , Simulator output:     Simulator exit code:  1
+46-bltz_0-positive , bltz , Pass , spruudis , Simulator output:     Simulator exit code:  1
+47-bltz_double-branch , bltz , Pass , spruudis , Simulator output:     Simulator exit code:  5
+48-bltz_neg-positive , bltz , Pass , spruudis , Simulator output:     Simulator exit code:  8
+49-bltz_negative-offset , bltz , Pass , spruudis , Simulator output:     Simulator exit code:  5
+50-bltz_pos-positive , bltz , Pass , spruudis , Simulator output:     Simulator exit code:  1
+51-bltzal_0-positive , bltzal , Pass , spruudis , Simulator output:     Simulator exit code:  1
+52-bltzal_double-branch , bltzal , Pass , spruudis , Simulator output:     Simulator exit code:  7
+53-bltzal_link-LSB , bltzal , Pass , spruudis , Simulator output:     Simulator exit code:  12
+54-bltzal_link-MSB , bltzal , Pass , spruudis , Simulator output:     Simulator exit code:  16
+55-bltzal_neg-positive , bltzal , Pass , spruudis , Simulator output:     Simulator exit code:  8
+56-bltzal_negative-offset , bltzal , Pass , spruudis , Simulator output:     Simulator exit code:  5
+57-bltzal_pos-positive , bltzal , Pass , spruudis , Simulator output:     Simulator exit code:  1
+58-bne_double-branch , bne , Pass , spruudis , Simulator output:     Simulator exit code:  7
+59-bne_false-positive , bne , Pass , spruudis , Simulator output:     Simulator exit code:  1
+60-bne_negative-offset , bne , Pass , spruudis , Simulator output:     Simulator exit code:  5
+61-bne_true-positive , bne , Pass , spruudis , Simulator output:     Simulator exit code:  8
+62-div_by-zero-hi , div , Pass , spruudis , Simulator output:     Simulator exit code:  154
+63-div_by-zero-lo , div , Pass , spruudis , Simulator output:     Simulator exit code:  154
+64-div_neg-by-neg-hi , div , Pass , spruudis , Simulator output:     Simulator exit code:  207
+65-div_neg-by-neg-lo , div , Pass , spruudis , Simulator output:     Simulator exit code:  84
+66-div_neg-by-pos-hi , div , Pass , spruudis , Simulator output:     Simulator exit code:  207
+67-div_neg-by-pos-lo , div , Pass , spruudis , Simulator output:     Simulator exit code:  172
+68-div_pos-by-neg-hi , div , Pass , spruudis , Simulator output:     Simulator exit code:  49
+69-div_pos-by-neg-lo , div , Pass , spruudis , Simulator output:     Simulator exit code:  172
+70-div_pos-by-pos-hi , div , Pass , spruudis , Simulator output:     Simulator exit code:  65
+71-div_pos-by-pos-lo , div , Pass , spruudis , Simulator output:     Simulator exit code:  66
+72-divu_by-zero-hi , divu , Pass , spruudis , Simulator output:     Simulator exit code:  154
+73-divu_by-zero-lo , divu , Pass , spruudis , Simulator output:     Simulator exit code:  154
+74-divu_neg-by-neg-hi , divu , Pass , spruudis , Simulator output:     Simulator exit code:  0
+75-divu_neg-by-neg-lo , divu , Pass , spruudis , Simulator output:     Simulator exit code:  2
+76-j_OOB , j , Pass , spruudis , Simulator output:     Simulator exit code:  245
+77-j_pos , j , Pass , spruudis , Simulator output:     Simulator exit code:  6
+78-jal_link-LSB , jal , Pass , spruudis , Simulator output:     Simulator exit code:  8
+79-jal_link-MSB , jal , Pass , spruudis , Simulator output:     Simulator exit code:  16
+80-jal_pos , jal , Pass , spruudis , Simulator output:     Simulator exit code:  6
+81-jalr_OOB , jalr , Pass , spruudis , Simulator output:     Simulator exit code:  245
+82-jalr_link-LSB , jalr , Pass , spruudis , Simulator output:     Simulator exit code:  20
+83-jalr_link-MSB , jalr , Pass , spruudis , Simulator output:     Simulator exit code:  16
+84-jalr_pos , jalr , Pass , spruudis , Simulator output:     Simulator exit code:  7
+85-jalr_to-0-test-delay , jalr , Pass , spruudis , Simulator output:     Simulator exit code:  10
+86-jr_OOB , jr , Pass , spruudis , Simulator output:     Simulator exit code:  245
+87-jr_pos , jr , Pass , spruudis , Simulator output:     Simulator exit code:  7
+88-jr_to-0-test-delay , jr , Pass , spruudis , Simulator output:     Simulator exit code:  10
+89-lb_ADDR-1 , lb , Pass , spruudis , Simulator output:     Simulator exit code:  245
+90-lb_ADDR-2352 , lb , Pass , spruudis , Simulator output:     Simulator exit code:  245
+91-lb_ADDR , lb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+92-lb_GETC+1 , lb , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+93-lb_GETC+2 , lb , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+94-lb_GETC+3 , lb , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+95-lb_GETC+4 , lb , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+96-lb_GETC-1 , lb , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+97-lb_GETC , lb , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+98-lb_OOB-1 , lb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+99-lb_OOB , lb , Pass , spruudis , Simulator output:     Simulator exit code:  245
+100-lb_instr-mem , lb , Pass , spruudis , Simulator output:     Simulator exit code:  40
+101-lb_simple+1 , lb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+102-lb_simple+2 , lb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+103-lb_simple+3 , lb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+104-lb_simple-neg , lb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+105-lb_simple-pos , lb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+106-lbu_ADDR-1 , lbu , Pass , spruudis , Simulator output:     Simulator exit code:  245
+107-lbu_ADDR-2352 , lbu , Pass , spruudis , Simulator output:     Simulator exit code:  245
+108-lbu_ADDR , lbu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+109-lbu_GETC+1 , lbu , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+110-lbu_GETC+2 , lbu , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+111-lbu_GETC+3 , lbu , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+112-lbu_GETC+4 , lbu , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+113-lbu_GETC-1 , lbu , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+114-lbu_GETC , lbu , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+115-lbu_OOB-1 , lbu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+116-lbu_OOB , lbu , Pass , spruudis , Simulator output:     Simulator exit code:  245
+117-lbu_instr-mem , lbu , Pass , spruudis , Simulator output:     Simulator exit code:  40
+118-lbu_simple+1 , lbu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+119-lbu_simple+2 , lbu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+120-lbu_simple+3 , lbu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+121-lbu_simple-neg , lbu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+122-lbu_simple-pos , lbu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+123-lh_ADDR-2 , lh , Pass , spruudis , Simulator output:     Simulator exit code:  245
+124-lh_ADDR-2352 , lh , Pass , spruudis , Simulator output:     Simulator exit code:  245
+125-lh_ADDR , lh , Pass , spruudis , Simulator output:     Simulator exit code:  1
+126-lh_GETC+2 , lh , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+127-lh_GETC+4 , lh , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+128-lh_GETC-2 , lh , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+129-lh_GETC , lh , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+130-lh_OOB-2 , lh , Pass , spruudis , Simulator output:     Simulator exit code:  1
+131-lh_OOB , lh , Pass , spruudis , Simulator output:     Simulator exit code:  245
+132-lh_instr-mem , lh , Pass , spruudis , Simulator output:     Simulator exit code:  1
+133-lh_simple+2 , lh , Pass , spruudis , Simulator output:     Simulator exit code:  1
+134-lh_simple-neg , lh , Pass , spruudis , Simulator output:     Simulator exit code:  1
+135-lh_simple-pos , lh , Pass , spruudis , Simulator output:     Simulator exit code:  1
+136-lh_unaligned , lh , Pass , spruudis , Simulator output:     Simulator exit code:  245
+137-lhu_ADDR-2 , lhu , Pass , spruudis , Simulator output:     Simulator exit code:  245
+138-lhu_ADDR-2352 , lhu , Pass , spruudis , Simulator output:     Simulator exit code:  245
+139-lhu_ADDR , lhu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+140-lhu_GETC+2 , lhu , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+141-lhu_GETC+4 , lhu , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+142-lhu_GETC-2 , lhu , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+143-lhu_GETC , lhu , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+144-lhu_OOB-2 , lhu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+145-lhu_OOB , lhu , Pass , spruudis , Simulator output:     Simulator exit code:  245
+146-lhu_instr-mem , lhu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+147-lhu_simple+2 , lhu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+148-lhu_simple-neg , lhu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+149-lhu_simple-pos , lhu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+150-lhu_unaligned , lhu , Pass , spruudis , Simulator output:     Simulator exit code:  245
+151-lw_ADDR-2352 , lw , Pass , spruudis , Simulator output:     Simulator exit code:  245
+152-lw_ADDR-4 , lw , Pass , spruudis , Simulator output:     Simulator exit code:  245
+153-lw_ADDR , lw , Pass , spruudis , Simulator output:     Simulator exit code:  1
+154-lw_GETC+4 , lw , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+155-lw_GETC-4 , lw , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+156-lw_GETC , lw , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+157-lw_NULL , lw , Pass , spruudis , Simulator output:     Simulator exit code:  245
+158-lw_OOB-4 , lw , Pass , spruudis , Simulator output:     Simulator exit code:  1
+159-lw_OOB , lw , Pass , spruudis , Simulator output:     Simulator exit code:  245
+160-lw_instr-mem , lw , Pass , spruudis , Simulator output:     Simulator exit code:  1
+161-lw_simple , lw , Pass , spruudis , Simulator output:     Simulator exit code:  1
+162-lw_unaligned , lw , Pass , spruudis , Simulator output:     Simulator exit code:  245
+163-lwl-lwr_simple , lwl-lwr , Pass , spruudis , Simulator output:     Simulator exit code:  1
+164-lwl_ADDR-1 , lwl , Pass , spruudis , Simulator output:     Simulator exit code:  245
+165-lwl_ADDR , lwl , Pass , spruudis , Simulator output:     Simulator exit code:  1
+166-lwl_GETC+1 , lwl , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+167-lwl_GETC+2 , lwl , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+168-lwl_GETC+3 , lwl , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+169-lwl_GETC+4 , lwl , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+170-lwl_GETC-1 , lwl , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+171-lwl_GETC , lwl , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+172-lwl_OOB-1 , lwl , Pass , spruudis , Simulator output:     Simulator exit code:  1
+173-lwl_OOB , lwl , Pass , spruudis , Simulator output:     Simulator exit code:  245
+174-lwl_instr-mem , lwl , Pass , spruudis , Simulator output:     Simulator exit code:  1
+175-lwl_simple+0 , lwl , Pass , spruudis , Simulator output:     Simulator exit code:  1
+176-lwl_simple+1 , lwl , Pass , spruudis , Simulator output:     Simulator exit code:  1
+177-lwl_simple+2 , lwl , Pass , spruudis , Simulator output:     Simulator exit code:  1
+178-lwl_simple+3 , lwl , Pass , spruudis , Simulator output:     Simulator exit code:  1
+179-lwr_ADDR-1 , lwr , Pass , spruudis , Simulator output:     Simulator exit code:  245
+180-lwr_ADDR , lwr , Pass , spruudis , Simulator output:     Simulator exit code:  1
+181-lwr_GETC+1 , lwr , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+182-lwr_GETC+2 , lwr , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+183-lwr_GETC+3 , lwr , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+184-lwr_GETC+4 , lwr , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+185-lwr_GETC-1 , lwr , Pass , spruudis , Simulator output:  none    Simulator exit code:  245
+186-lwr_GETC , lwr , Pass , spruudis , Simulator output:  none    Simulator exit code:  1
+187-lwr_OOB-1 , lwr , Pass , spruudis , Simulator output:     Simulator exit code:  1
+188-lwr_OOB , lwr , Pass , spruudis , Simulator output:     Simulator exit code:  245
+189-lwr_instr-mem , lwr , Pass , spruudis , Simulator output:     Simulator exit code:  1
+190-lwr_simple+0 , lwr , Pass , spruudis , Simulator output:     Simulator exit code:  1
+191-lwr_simple+1 , lwr , Pass , spruudis , Simulator output:     Simulator exit code:  1
+192-lwr_simple+2 , lwr , Pass , spruudis , Simulator output:     Simulator exit code:  1
+193-lwr_simple+3 , lwr , Pass , spruudis , Simulator output:     Simulator exit code:  1
+194-mfhi , mfhi , Pass , spruudis , Simulator output:     Simulator exit code:  5
+195-mflo , mflo , Pass , spruudis , Simulator output:     Simulator exit code:  5
+196-misc_invalid-bin , misc , Pass , spruudis , Simulator output:     Simulator exit code:  244
+197-misc_nojump0 , misc , Pass , spruudis , Simulator output:     Simulator exit code:  245
+198-misc_writereg0 , misc , Pass , spruudis , Simulator output:     Simulator exit code:  0
+199-mult_by-zero , mult , Pass , spruudis , Simulator output:     Simulator exit code:  0
+200-mult_minus-large , mult , Pass , spruudis , Simulator output:     Simulator exit code:  64
+201-mult_minus-ones , mult , Pass , spruudis , Simulator output:     Simulator exit code:  1
+202-mult_neg-result , mult , Pass , spruudis , Simulator output:     Simulator exit code:  0
+203-mult_pos-large , mult , Pass , spruudis , Simulator output:     Simulator exit code:  0
+204-mult_pos-result , mult , Pass , spruudis , Simulator output:     Simulator exit code:  0
+205-multu_by-zero , multu , Pass , spruudis , Simulator output:     Simulator exit code:  0
+206-multu_large , multu , Pass , spruudis , Simulator output:     Simulator exit code:  64
+207-multu_neg-by-pos , multu , Pass , spruudis , Simulator output:     Simulator exit code:  0
+208-multu_ones , multu , Pass , spruudis , Simulator output:     Simulator exit code:  0
+209-multu_pos-large , multu , Pass , spruudis , Simulator output:     Simulator exit code:  0
+210-multu_pos-result , multu , Pass , spruudis , Simulator output:     Simulator exit code:  0
+211-or_simple-test1 , or , Pass , spruudis , Simulator output:     Simulator exit code:  255
+212-or_simple-test2 , or , Pass , spruudis , Simulator output:     Simulator exit code:  15
+213-ori_simple-test1 , ori , Pass , spruudis , Simulator output:     Simulator exit code:  255
+214-ori_simple-test2 , ori , Pass , spruudis , Simulator output:     Simulator exit code:  15
+215-ori_zero-extension , ori , Pass , spruudis , Simulator output:     Simulator exit code:  240
+216-sb_ADDR-1 , sb , Pass , spruudis , Simulator output:     Simulator exit code:  245
+217-sb_ADDR-2352 , sb , Pass , spruudis , Simulator output:     Simulator exit code:  245
+218-sb_ADDR , sb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+219-sb_OOB-1 , sb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+220-sb_OOB , sb , Pass , spruudis , Simulator output:     Simulator exit code:  245
+221-sb_PUTC+1 , sb , Pass , spruudis , Simulator output:  K    Simulator exit code:  0
+222-sb_PUTC+2 , sb , Pass , spruudis , Simulator output:  K    Simulator exit code:  0
+223-sb_PUTC+3 , sb , Pass , spruudis , Simulator output:  XK    Simulator exit code:  0
+224-sb_PUTC+4 , sb , Pass , spruudis , Simulator output:     Simulator exit code:  245
+225-sb_PUTC-1 , sb , Pass , spruudis , Simulator output:     Simulator exit code:  245
+226-sb_PUTC , sb , Pass , spruudis , Simulator output:  K    Simulator exit code:  0
+227-sb_instr-mem , sb , Pass , spruudis , Simulator output:     Simulator exit code:  245
+228-sb_simple+1 , sb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+229-sb_simple+2 , sb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+230-sb_simple+3 , sb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+231-sb_simple , sb , Pass , spruudis , Simulator output:     Simulator exit code:  1
+232-sh_ADDR-2 , sh , Pass , spruudis , Simulator output:     Simulator exit code:  245
+233-sh_ADDR-2352 , sh , Pass , spruudis , Simulator output:     Simulator exit code:  245
+234-sh_ADDR , sh , Pass , spruudis , Simulator output:     Simulator exit code:  1
+235-sh_OOB+2 , sh , Pass , spruudis , Simulator output:     Simulator exit code:  245
+236-sh_OOB-2 , sh , Pass , spruudis , Simulator output:     Simulator exit code:  1
+237-sh_OOB , sh , Pass , spruudis , Simulator output:     Simulator exit code:  245
+238-sh_PUTC+2 , sh , Pass , spruudis , Simulator output:  XK    Simulator exit code:  0
+239-sh_PUTC+4 , sh , Pass , spruudis , Simulator output:     Simulator exit code:  245
+240-sh_PUTC-2 , sh , Pass , spruudis , Simulator output:     Simulator exit code:  245
+241-sh_PUTC , sh , Pass , spruudis , Simulator output:  K    Simulator exit code:  0
+242-sh_instr-mem , sh , Pass , spruudis , Simulator output:     Simulator exit code:  245
+243-sh_simple+2 , sh , Pass , spruudis , Simulator output:     Simulator exit code:  1
+244-sh_simple , sh , Pass , spruudis , Simulator output:     Simulator exit code:  1
+245-sh_unaligned , sh , Pass , spruudis , Simulator output:     Simulator exit code:  245
+246-sll_negative-test , sll , Pass , spruudis , Simulator output:     Simulator exit code:  248
+247-sll_simple-test , sll , Pass , spruudis , Simulator output:     Simulator exit code:  8
+248-sllv_negative-test , sllv , Pass , spruudis , Simulator output:     Simulator exit code:  248
+249-sllv_simple-test , sllv , Pass , spruudis , Simulator output:     Simulator exit code:  8
+250-sllv_truncation-test , sllv , Pass , spruudis , Simulator output:     Simulator exit code:  8
+251-slt , slt , Pass , spruudis , Simulator output:     Simulator exit code:  1
+252-slt_false , slt , Pass , spruudis , Simulator output:     Simulator exit code:  0
+253-slt_neg-pos-false , slt , Pass , spruudis , Simulator output:     Simulator exit code:  0
+254-slt_neg-pos , slt , Pass , spruudis , Simulator output:     Simulator exit code:  1
+255-slti , slti , Pass , spruudis , Simulator output:     Simulator exit code:  1
+256-slti_false-sign-extend , slti , Pass , spruudis , Simulator output:     Simulator exit code:  0
+257-slti_false , slti , Pass , spruudis , Simulator output:     Simulator exit code:  0
+258-sltu_neg-pos-false , sltu , Pass , spruudis , Simulator output:     Simulator exit code:  0
+259-sltu_neg-pos , sltu , Pass , spruudis , Simulator output:     Simulator exit code:  1
+260-sra_negative-LSB , sra , Pass , spruudis , Simulator output:     Simulator exit code:  248
+261-sra_negative-MSB , sra , Pass , spruudis , Simulator output:     Simulator exit code:  255
+262-sra_positive-LSB , sra , Pass , spruudis , Simulator output:     Simulator exit code:  8
+263-sra_positive-MSB , sra , Pass , spruudis , Simulator output:     Simulator exit code:  0
+264-srav_negative-LSB , srav , Pass , spruudis , Simulator output:     Simulator exit code:  248
+265-srav_negative-MSB , srav , Pass , spruudis , Simulator output:     Simulator exit code:  255
+266-srav_positive-LSB , srav , Pass , spruudis , Simulator output:     Simulator exit code:  8
+267-srav_positive-MSB , srav , Pass , spruudis , Simulator output:     Simulator exit code:  0
+268-srav_truncation-test , srav , Pass , spruudis , Simulator output:     Simulator exit code:  8
+269-srl_negative-test-LSB , srl , Pass , spruudis , Simulator output:     Simulator exit code:  248
+270-srl_negative-test-MSB , srl , Pass , spruudis , Simulator output:     Simulator exit code:  127
+271-srl_simple-test-LSB , srl , Pass , spruudis , Simulator output:     Simulator exit code:  8
+272-srl_simple-test-MSB , srl , Pass , spruudis , Simulator output:     Simulator exit code:  0
+273-srlv_simple-test , srlv , Pass , spruudis , Simulator output:     Simulator exit code:  8
+274-srlv_truncation-test , srlv , Pass , spruudis , Simulator output:     Simulator exit code:  8
+275-sub , sub , Pass , spruudis , Simulator output:     Simulator exit code:  121
+276-sub_overflow , sub , Pass , spruudis , Simulator output:     Simulator exit code:  0
+277-sub_signed-overflow , sub , Pass , spruudis , Simulator output:     Simulator exit code:  246
+278-sub_zero , sub , Pass , spruudis , Simulator output:     Simulator exit code:  0
+279-subu , subu , Pass , spruudis , Simulator output:     Simulator exit code:  121
+280-subu_signed-overflow , subu , Pass , spruudis , Simulator output:     Simulator exit code:  255
+281-sw_ADDR-2352 , sw , Pass , spruudis , Simulator output:     Simulator exit code:  245
+282-sw_ADDR-4 , sw , Pass , spruudis , Simulator output:     Simulator exit code:  245
+283-sw_ADDR , sw , Pass , spruudis , Simulator output:     Simulator exit code:  1
+284-sw_OOB-4 , sw , Pass , spruudis , Simulator output:     Simulator exit code:  1
+285-sw_OOB , sw , Pass , spruudis , Simulator output:     Simulator exit code:  245
+286-sw_PUTC+4 , sw , Pass , spruudis , Simulator output:     Simulator exit code:  245
+287-sw_PUTC-4 , sw , Pass , spruudis , Simulator output:     Simulator exit code:  245
+288-sw_PUTC , sw , Pass , spruudis , Simulator output:  XHello    Simulator exit code:  0
+289-sw_instr-mem , sw , Pass , spruudis , Simulator output:     Simulator exit code:  245
+290-sw_simple , sw , Pass , spruudis , Simulator output:     Simulator exit code:  1
+291-sw_unaligned , sw , Pass , spruudis , Simulator output:     Simulator exit code:  245
+292-xor , xor , Pass , spruudis , Simulator output:     Simulator exit code:  102
+293-xor_zero , xor , Pass , spruudis , Simulator output:     Simulator exit code:  0
+294-xori_simple-test1 , xori , Pass , spruudis , Simulator output:     Simulator exit code:  240
+295-xori_simple-test2 , xori , Pass , spruudis , Simulator output:     Simulator exit code:  15
+296-xori_zero-extension , xori , Pass , spruudis , Simulator output:     Simulator exit code:  240
+

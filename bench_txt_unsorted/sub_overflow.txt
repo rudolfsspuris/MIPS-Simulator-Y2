@@ -1,0 +1,12 @@
+#tests sub -1 - (-1) no overflow, result should be 0
+
+ori	$t3, $t3, 0xFFFF
+sll	$t3, $t3, 16
+ori	$t3, $t3, 0xFFFF	#$t3 = FFFFFFFF
+
+
+sub  	$2, $t3, $t3
+
+jr $0
+
+#exit status: 0

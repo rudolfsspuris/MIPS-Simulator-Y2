@@ -1,0 +1,10 @@
+
+#tests divison
+addiu  	$10, $10, 6665
+divu   	$10, $0
+
+mfhi	$2
+
+jr $0
+
+#exit status: 154

@@ -1,0 +1,10 @@
+# tests moving 5 from register to HI and MFHI back to a different register
+ori	$3, $3, 5
+
+mthi	$3
+
+mfhi	$2
+
+jr	$0
+
+#Exit code: 5

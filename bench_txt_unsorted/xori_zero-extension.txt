@@ -1,0 +1,10 @@
+addi $10, $10, 0xF0F0
+sll  $10, $10, 16
+addi $10, $10, 0x7FFF
+
+xori $2, $10, 0xFFFF
+srl   $2, $2, 16
+
+jr $0
+
+#F0

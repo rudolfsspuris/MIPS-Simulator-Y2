@@ -1,0 +1,12 @@
+jal 16
+addi $2, $2, 1
+addi $2, $2, 1
+addi $2, $2, 1
+addi $2, $2, 1
+addi $2, $2, 1
+addi $2, $2, 1
+addi $2, $2, 1
+addi $2, $31, 0
+jr $0
+
+#Exit code: 8

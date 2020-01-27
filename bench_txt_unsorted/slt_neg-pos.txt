@@ -1,0 +1,9 @@
+#tests slt -30 < 5
+
+addi	$t1, $t1, -30
+addi	$t2, $t2, 5
+
+slt 	$2, $t1, $t2
+
+jr $0
+#exit status: 1

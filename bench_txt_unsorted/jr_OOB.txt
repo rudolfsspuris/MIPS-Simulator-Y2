@@ -1,0 +1,6 @@
+addi $10, $10, 4
+jr $10
+nop
+jr $0
+
+#Exit code: -11

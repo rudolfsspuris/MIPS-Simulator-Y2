@@ -1,0 +1,9 @@
+#tests slt 52 < 173
+
+addi	$t1, $t1, 173
+addi	$t2, $t2, 52
+
+slt 	$2, $t1, $t2
+
+jr $0
+#exit status: 0

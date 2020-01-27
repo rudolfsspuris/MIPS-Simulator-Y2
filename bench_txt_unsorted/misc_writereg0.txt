@@ -1,0 +1,9 @@
+# $0 is read only: no error, but $0 should remain equals to 0
+
+addi $0, $0, 5
+
+addi $2, $0, 0
+
+jr	$0
+
+#exit code = 0

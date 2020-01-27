@@ -1,0 +1,12 @@
+#tests adding 0xFFFF FFFF + 0xFFFF FFFF = -2 no 32 bit overflow
+
+ori	$t3, $t3, 0xFFFF
+sll	$t3, $t3, 16
+ori	$t3, $t3, 0xFFFF
+
+
+addiu  	$2, $t3, -1
+
+jr 	$0
+
+#exit status: -2 = 254

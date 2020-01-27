@@ -1,0 +1,298 @@
+TestId , Instruction , Status , Author , Message
+1-add , add , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+2-addi , addi , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+3-addi_overflow , addi , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+4-addi_signed-overflow , addi , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+5-addi_sign-extend , addi , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+6-addiu , addiu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+7-addiu_overflow , addiu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+8-addiu_signed-overflow , addiu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+9-addiu_sign-extend , addiu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+10-add_overflow , add , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+11-add_signed-overflow , add , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+12-addu , addu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+13-addu_zero , addu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+14-add_zero , add , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+15-andi_simple-test1 , andi , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+16-andi_simple-test2 , andi , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+17-andi_zero-extension , andi , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+18-and_simple-test1 , and , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+19-and_simple-test2 , and , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+20-beq_double-branch , beq , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+21-beq_false-positive , beq , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+22-beq_negative-offset , beq , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+23-beq_true-positive , beq , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+24-bgez_0-positive , bgez , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+25-bgezal_0-positive , bgezal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+26-bgezal_double-branch , bgezal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+27-bgezal_false-positive , bgezal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+28-bgezal_link-LSB , bgezal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+29-bgezal_link-MSB , bgezal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+30-bgezal_negative-offset , bgezal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+31-bgezal_pos-positive , bgezal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+32-bgez_double-branch , bgez , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+33-bgez_false-positive , bgez , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+34-bgez_negative-offset , bgez , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+35-bgez_pos-positive , bgez , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+36-bgtz_0-positive , bgtz , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+37-bgtz_double-branch , bgtz , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+38-bgtz_false-positive , bgtz , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+39-bgtz_negative-offset , bgtz , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+40-bgtz_pos-positive , bgtz , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+41-blez_0-positive , blez , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+42-blez_double-branch , blez , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+43-blez_negative-offset , blez , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+44-blez_neg-positive , blez , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+45-blez_pos-positive , blez , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+46-bltz_0-positive , bltz , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+47-bltzal_0-positive , bltzal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+48-bltzal_double-branch , bltzal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+49-bltzal_link-LSB , bltzal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+50-bltzal_link-MSB , bltzal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+51-bltzal_negative-offset , bltzal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+52-bltzal_neg-positive , bltzal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+53-bltzal_pos-positive , bltzal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+54-bltz_double-branch , bltz , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+55-bltz_negative-offset , bltz , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+56-bltz_neg-positive , bltz , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+57-bltz_pos-positive , bltz , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+58-bne_double-branch , bne , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+59-bne_false-positive , bne , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+60-bne_negative-offset , bne , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+61-bne_true-positive , bne , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+62-div_by-zero-hi , div , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+63-div_by-zero-lo , div , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+64-div_neg-by-neg-hi , div , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+65-div_neg-by-neg-lo , div , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+66-div_neg-by-pos-hi , div , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+67-div_neg-by-pos-lo , div , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+68-div_pos-by-neg-hi , div , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+69-div_pos-by-neg-lo , div , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+70-div_pos-by-pos-hi , div , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+71-div_pos-by-pos-lo , div , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+72-divu_by-zero-hi , divu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+73-divu_by-zero-lo , divu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+74-divu_neg-by-neg-hi , divu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+75-divu_neg-by-neg-lo , divu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+76-jal_link-LSB , jal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+77-jal_link-MSB , jal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+78-jal_pos , jal , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+79-jalr_link-LSB , jalr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+80-jalr_link-MSB , jalr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+81-jalr_OOB , jalr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+82-jalr_pos , jalr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+83-jalr_to-0-test-delay , jalr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+84-j_OOB , j , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+85-j_pos , j , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+86-jr_OOB , jr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+87-jr_pos , jr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+88-jr_to-0-test-delay , jr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+89-lb_ADDR-1 , lb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+90-lb_ADDR-2352 , lb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+91-lb_ADDR , lb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+92-lb_GETC-1 , lb , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+93-lb_GETC+1 , lb , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+94-lb_GETC+2 , lb , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+95-lb_GETC+3 , lb , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+96-lb_GETC+4 , lb , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+97-lb_GETC , lb , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+98-lb_instr-mem , lb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+99-lb_OOB-1 , lb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+100-lb_OOB , lb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+101-lb_simple+1 , lb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+102-lb_simple+2 , lb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+103-lb_simple+3 , lb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+104-lb_simple-neg , lb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+105-lb_simple-pos , lb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+106-lbu_ADDR-1 , lbu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+107-lbu_ADDR-2352 , lbu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+108-lbu_ADDR , lbu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+109-lbu_GETC-1 , lbu , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+110-lbu_GETC+1 , lbu , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+111-lbu_GETC+2 , lbu , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+112-lbu_GETC+3 , lbu , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+113-lbu_GETC+4 , lbu , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+114-lbu_GETC , lbu , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+115-lbu_instr-mem , lbu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+116-lbu_OOB-1 , lbu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+117-lbu_OOB , lbu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+118-lbu_simple+1 , lbu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+119-lbu_simple+2 , lbu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+120-lbu_simple+3 , lbu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+121-lbu_simple-neg , lbu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+122-lbu_simple-pos , lbu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+123-lh_ADDR-2352 , lh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+124-lh_ADDR-2 , lh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+125-lh_ADDR , lh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+126-lh_GETC-2 , lh , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+127-lh_GETC+2 , lh , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+128-lh_GETC+4 , lh , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+129-lh_GETC , lh , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+130-lh_instr-mem , lh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+131-lh_OOB-2 , lh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+132-lh_OOB , lh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+133-lh_simple+2 , lh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+134-lh_simple-neg , lh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+135-lh_simple-pos , lh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+136-lhu_ADDR-2352 , lhu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+137-lhu_ADDR-2 , lhu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+138-lhu_ADDR , lhu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+139-lhu_GETC-2 , lhu , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+140-lhu_GETC+2 , lhu , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+141-lhu_GETC+4 , lhu , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+142-lhu_GETC , lhu , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+143-lhu_instr-mem , lhu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+144-lh_unaligned , lh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+145-lhu_OOB-2 , lhu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+146-lhu_OOB , lhu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+147-lhu_simple+2 , lhu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+148-lhu_simple-neg , lhu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+149-lhu_simple-pos , lhu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+150-lhu_unaligned , lhu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+151-lw_ADDR-2352 , lw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+152-lw_ADDR-4 , lw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+153-lw_ADDR , lw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+154-lw_GETC-4 , lw , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+155-lw_GETC+4 , lw , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+156-lw_GETC , lw , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+157-lw_instr-mem , lw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+158-lwl_ADDR-1 , lwl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+159-lwl_ADDR , lwl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+160-lwl_GETC-1 , lwl , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+161-lwl_GETC+1 , lwl , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+162-lwl_GETC+2 , lwl , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+163-lwl_GETC+3 , lwl , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+164-lwl_GETC+4 , lwl , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+165-lwl_GETC , lwl , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+166-lwl_instr-mem , lwl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+167-lwl-lwr_simple , lwl-lwr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+168-lwl_OOB-1 , lwl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+169-lwl_OOB , lwl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+170-lwl_simple+0 , lwl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+171-lwl_simple+1 , lwl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+172-lwl_simple+2 , lwl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+173-lwl_simple+3 , lwl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+174-lw_NULL , lw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+175-lw_OOB-4 , lw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+176-lw_OOB , lw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+177-lwr_ADDR-1 , lwr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+178-lwr_ADDR , lwr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+179-lwr_GETC-1 , lwr , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+180-lwr_GETC+1 , lwr , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+181-lwr_GETC+2 , lwr , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+182-lwr_GETC+3 , lwr , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+183-lwr_GETC+4 , lwr , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+184-lwr_GETC , lwr , Fail , tomperkins99 , Simulator output:  none    Simulator exit code:  244
+185-lwr_instr-mem , lwr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+186-lwr_OOB-1 , lwr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+187-lwr_OOB , lwr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+188-lwr_simple+0 , lwr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+189-lwr_simple+1 , lwr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+190-lwr_simple+2 , lwr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+191-lwr_simple+3 , lwr , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+192-lw_simple , lw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+193-lw_unaligned , lw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+194-mfhi , mfhi , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+195-mflo , mflo , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+196-misc_invalid-bin , misc , Pass , tomperkins99 , Simulator output:     Simulator exit code:  244
+197-misc_nojump0 , misc , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+198-misc_writereg0 , misc , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+199-mult_by-zero , mult , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+200-mult_minus-large , mult , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+201-mult_minus-ones , mult , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+202-mult_neg-result , mult , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+203-mult_pos-large , mult , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+204-mult_pos-result , mult , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+205-multu_by-zero , multu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+206-multu_large , multu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+207-multu_neg-by-pos , multu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+208-multu_ones , multu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+209-multu_pos-large , multu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+210-multu_pos-result , multu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+211-ori_simple-test1 , ori , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+212-ori_simple-test2 , ori , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+213-ori_zero-extension , ori , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+214-or_simple-test1 , or , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+215-or_simple-test2 , or , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+216-sb_ADDR-1 , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+217-sb_ADDR-2352 , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+218-sb_ADDR , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+219-sb_instr-mem , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+220-sb_OOB-1 , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+221-sb_OOB , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+222-sb_PUTC-1 , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+223-sb_PUTC+1 , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+224-sb_PUTC+2 , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+225-sb_PUTC+3 , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+226-sb_PUTC+4 , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+227-sb_PUTC , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+228-sb_simple+1 , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+229-sb_simple+2 , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+230-sb_simple+3 , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+231-sb_simple , sb , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+232-sh_ADDR-2352 , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+233-sh_ADDR-2 , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+234-sh_ADDR , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+235-sh_instr-mem , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+236-sh_OOB-2 , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+237-sh_OOB+2 , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+238-sh_OOB , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+239-sh_PUTC-2 , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+240-sh_PUTC+2 , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+241-sh_PUTC+4 , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+242-sh_PUTC , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+243-sh_simple+2 , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+244-sh_simple , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+245-sh_unaligned , sh , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+246-sll_negative-test , sll , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+247-sll_simple-test , sll , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+248-sllv_negative-test , sllv , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+249-sllv_simple-test , sllv , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+250-sllv_truncation-test , sllv , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+251-slt , slt , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+252-slt_false , slt , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+253-slti , slti , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+254-slti_false , slti , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+255-slti_false-sign-extend , slti , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+256-slt_neg-pos , slt , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+257-slt_neg-pos-false , slt , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+258-sltu_neg-pos , sltu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+259-sltu_neg-pos-false , sltu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+260-sra_negative-LSB , sra , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+261-sra_negative-MSB , sra , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+262-sra_positive-LSB , sra , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+263-sra_positive-MSB , sra , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+264-srav_negative-LSB , srav , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+265-srav_negative-MSB , srav , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+266-srav_positive-LSB , srav , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+267-srav_positive-MSB , srav , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+268-srav_truncation-test , srav , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+269-srl_negative-test-LSB , srl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+270-srl_negative-test-MSB , srl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+271-srl_simple-test-LSB , srl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+272-srl_simple-test-MSB , srl , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+273-srlv_simple-test , srlv , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+274-srlv_truncation-test , srlv , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+275-sub , sub , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+276-sub_overflow , sub , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+277-sub_signed-overflow , sub , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+278-subu , subu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+279-subu_signed-overflow , subu , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+280-sub_zero , sub , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+281-sw_ADDR-2352 , sw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+282-sw_ADDR-4 , sw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+283-sw_ADDR , sw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+284-sw_instr-mem , sw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+285-sw_OOB-4 , sw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+286-sw_OOB , sw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+287-sw_PUTC-4 , sw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+288-sw_PUTC+4 , sw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+289-sw_PUTC , sw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+290-sw_simple , sw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+291-sw_unaligned , sw , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+292-xor , xor , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+293-xori_simple-test1 , xori , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+294-xori_simple-test2 , xori , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+295-xori_zero-extension , xori , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+296-xor_zero , xor , Fail , tomperkins99 , Simulator output:     Simulator exit code:  244
+
