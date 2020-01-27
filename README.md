@@ -9,7 +9,7 @@ which was able to test the MIPS simulator.
 Reflection
 ==========================
 
-These are my reflections on the project, parts of which were submitted with the project.
+These are some of my reflections on the project, parts of which were submitted with the project.
 
 Time management
 ---------------
